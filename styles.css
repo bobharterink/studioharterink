@@ -1,40 +1,17 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+html {
+  height: 100vh;
 }
 
 body {
-  font-family: sans-serif;
+  height: 500vh;
+  background: #ffffff;
 }
 
-.intro {
-  height: 100vh;
+canvas {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100vw;
+  max-height: 100vh;
 }
-
-.intro video {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-.intro h1 {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-font-size: 80px;
-color: white;
-}
-
-section {
-  height: 100vh;
-  color: black;
-}
-
-section h1 {
-  padding-top: 300px;
-  text-align: center;
-  font-size: 80px;
-}
-
