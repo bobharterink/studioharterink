@@ -40,3 +40,51 @@ window.addEventListener('scroll', () => {
 });
 
 preloadImages()
+
+/* $(window).scroll(function(){ 
+
+var a = 2000;
+var pos = $(window).scrollTop();
+if(pos > a) {
+    $("#hero-lightpass").css({
+                position: 'static'
+            });
+}
+else {
+    $("#hero-lightpass").css({
+                position: 'fixed',
+            });
+}
+}); */
+
+$(window).scroll(function(){ 
+
+  var a = 1000;
+  var pos = $(window).scrollTop();
+  if(pos > a) {
+      $("header").css({
+                  position: 'static'
+              });
+  }
+  else {
+      $("header").css({
+                  position: 'fixed',
+              });
+  }
+  });
+
+$(window).scroll(function(){
+  $(".icon-scroll").css("opacity", 1 - $(window).scrollTop() / 10);
+});
+
+$(window).scroll(function(){
+  $("#brandname").css("opacity", 1 - $(window).scrollTop() / 100);
+});
+
+$(window).scroll(function(){
+  $(".sticky").css("opacity", 0 + $(window).scrollTop() / 100);
+});
+
+$(window).scroll(function(){
+  $("#brandname").css("font-size", 100 - $(window).scrollTop() / 10);
+});
