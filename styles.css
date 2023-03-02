@@ -32,6 +32,38 @@ canvas {
   z-index: 1;
 }
 
+/***************************/
+/********** HERO ***********/
+/***************************/
+
+#hero-wrapper {
+  position: relative;
+  width: 100%;
+
+  background-color: green;
+}
+
+#hero-content {
+  position: sticky;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#hero-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#hero-fake-scroll {
+  height: 300vh;
+}
+
 .center {
   height: 100%;
 }
@@ -51,7 +83,7 @@ canvas {
   border-radius: 25px;
 }
 .icon-scroll:before {
-  content: '';
+  content: "";
   width: 8px;
   height: 8px;
   background: #000;
@@ -108,26 +140,25 @@ section {
 }
 
 #beeld {
-background-color: blue;
+  background-color: blue;
 }
-
 
 #hoegemaakt {
   background-color: crimson;
-  }
+}
 
-  h2 {
-    padding: 0;
-    margin: 0;
-  }
+h2 {
+  padding: 0;
+  margin: 0;
+}
 
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 20px;
-    background-color: white;
-    text-align: center;
-  }
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  background-color: white;
+  text-align: center;
+}

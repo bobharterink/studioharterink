@@ -1,45 +1,51 @@
 const html = document.documentElement;
-const canvas = document.getElementById("hero-lightpass");
-const context = canvas.getContext("2d");
+// const canvas = document.getElementById("hero-lightpass");
+// const context = canvas.getContext("2d");
+const fakeScroll = document.getElementById("hero-fake-scroll");
+const fakeScrollHeight = fakeScroll.getBoundingClientRect().height;
+console.log(fakeScrollHeight);
 
 const frameCount = 120;
-const currentFrame = index => (
-  `http://127.0.0.1:5500/videoimg/${index.toString().padStart(4, '0')}.jpg`
-)
 
 const preloadImages = () => {
-  for (let i = 1; i < frameCount; i++) {
+  const images = [];
+
+  for (let i = 1; i <= frameCount; i++) {
+    const src = `/videoimg/${i.toString().padStart(4, "0")}.jpg`;
     const img = new Image();
-    img.src = currentFrame(i);
+    img.src = src;
+    images.push(img);
   }
+
+  return images;
 };
 
-const img = new Image()
-img.src = currentFrame(1);
-canvas.width=1920;
-canvas.height=1080;
-img.onload=function(){
-  context.drawImage(img, 0, 0);
-}
+let images = preloadImages();
 
-const updateImage = index => {
-  img.src = currentFrame(index);
-  context.drawImage(img, 0, 0);
-}
+const heroImage = document.createElement("img");
+heroImage.src = images[0].src;
+document.getElementById("hero-content").appendChild(heroImage);
 
-window.addEventListener('scroll', () => {  
+console.log(images);
+
+// canvas.width = 1920;
+// canvas.height = 1080;
+
+// const updateImage = (index) => {
+//   img.src = currentFrame(index);
+//   context.drawImage(img, 0, 0);
+// };
+
+window.addEventListener("scroll", () => {
   const scrollTop = html.scrollTop;
-  const maxScrollTop = html.scrollHeight - window.innerHeight;
+  const maxScrollTop = fakeScrollHeight;
   const scrollFraction = scrollTop / maxScrollTop;
   const frameIndex = Math.min(
     frameCount - 1,
     Math.ceil(scrollFraction * frameCount)
   );
-  
-  requestAnimationFrame(() => updateImage(frameIndex + 1))
+  heroImage.src = images[frameIndex].src;
 });
-
-preloadImages()
 
 /* $(window).scroll(function(){ 
 
@@ -57,34 +63,32 @@ else {
 }
 }); */
 
-$(window).scroll(function(){ 
-
+$(window).scroll(function () {
   var a = 1000;
   var pos = $(window).scrollTop();
-  if(pos > a) {
-      $("header").css({
-                  position: 'static'
-              });
+  if (pos > a) {
+    $("header").css({
+      position: "static",
+    });
+  } else {
+    $("header").css({
+      position: "fixed",
+    });
   }
-  else {
-      $("header").css({
-                  position: 'fixed',
-              });
-  }
-  });
+});
 
-$(window).scroll(function(){
+$(window).scroll(function () {
   $(".icon-scroll").css("opacity", 1 - $(window).scrollTop() / 10);
 });
 
-$(window).scroll(function(){
+$(window).scroll(function () {
   $("#brandname").css("opacity", 1 - $(window).scrollTop() / 100);
 });
 
-$(window).scroll(function(){
+$(window).scroll(function () {
   $(".sticky").css("opacity", 0 + $(window).scrollTop() / 100);
 });
 
-$(window).scroll(function(){
+$(window).scroll(function () {
   $("#brandname").css("font-size", 100 - $(window).scrollTop() / 10);
 });
