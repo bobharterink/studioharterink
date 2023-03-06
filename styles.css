@@ -5,9 +5,15 @@
 
 * {
   font-family: myFirstFont;
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;
+}
+
+a{
+  text-decoration: none;
+  color: black;
 }
 
 canvas {
@@ -39,7 +45,6 @@ canvas {
 #hero-wrapper {
   position: relative;
   width: 100%;
-
   background-color: green;
 }
 
@@ -140,11 +145,17 @@ section {
 }
 
 #beeld {
-  background-color: blue;
+  background-image: url("img/groenevaas.jpg");
+  background-repeat:no-repeat;
+background-size:contain;
+background-position:center;
 }
 
 #hoegemaakt {
-  background-color: crimson;
+  background-image: url("img/rodevaas.jpg");
+  background-repeat:no-repeat;
+background-size:contain;
+background-position:center;
 }
 
 h2 {
@@ -161,4 +172,63 @@ h2 {
   font-size: 20px;
   background-color: white;
   text-align: center;
+}
+
+.title {
+  font-size: 50px;
+  padding-left: 12vw;
+  padding-right: 12vw;
+}
+
+#titlelinks {
+  text-align: left;
+}
+
+#titlerechts {
+  text-align: right;
+}
+
+.topnav {
+  position: fixed;
+  z-index: 1;
+  width: 100vw;
+  overflow: hidden;
+  background-color: white;
+}
+
+.topnav a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 17px;
+}
+
+.topnav-centered a {
+  font-size: 40px;
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.topnav-right {
+  float: right;
+  padding-right: 2vw;
+}
+
+/* Responsive navigation menu (for mobile devices) */
+@media screen and (max-width: 600px) {
+  .topnav a, .topnav-right {
+    float: none;
+    display: block;
+  }
+  
+  .topnav-centered a {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
 }
