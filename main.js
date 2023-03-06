@@ -86,7 +86,7 @@ $(window).scroll(function () {
 });
 
 $(window).scroll(function () {
-  $(".sticky").css("opacity", 0 + $(window).scrollTop() / 100);
+  $(".topnav").css("opacity", 0 + $(window).scrollTop() / 100);
 });
 
 $(window).scroll(function () {
