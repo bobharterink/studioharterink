@@ -1,6 +1,9 @@
 @font-face {
   font-family: myFirstFont;
   src: url(schirft/OTF/SFTSchriftedSansTRIAL-DemiBold.otf);
+  src: url(schirft/OTF/SFTSchriftedSansTRIAL-Medium.otf);
+  src: url(schirft/OTF/SFTSchriftedSansTRIAL-Regular.otf);
+  
 }
 
 * {
@@ -10,6 +13,7 @@
 body, html{
   margin: 0;
   padding: 0;
+  scroll-padding-top: 64px;
 }
 
 a{
@@ -32,7 +36,7 @@ canvas {
 }
 
 .header {
-  position: static;
+  position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -50,13 +54,14 @@ canvas {
 
 #hero-content {
   position: sticky;
-  width: 100dvw;
+  /* width: 100dvw; */
   height: 100dvh;
   top: 0;
   left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 80px
 }
 
 #hero-content img {
@@ -140,14 +145,14 @@ h1 {
 }
 
 section {
-  height: 100dvh;
-  width: 100dvw;
+  height: 97dvh;
+  /* width: 100dvw; */
 }
 
 #beeld {
-  background-image: url("img/groenevaas.jpg");
+  background-image: url("img/groenevaas2.jpg");
   background-repeat:no-repeat;
-  background-size:contain;
+  background-size:cover;
   background-position:center;
 }
 
@@ -178,17 +183,6 @@ h2 {
   font-size: 50px;
 }
 
-#titlelinks {
-  float: left;
-  width: 50%;
-  padding-left: 20px;
-}
-
-#titlerechts {
-  float: right;
-  width: 50%;
-}
-
 .topnav {
   position: fixed;
   z-index: 1;
@@ -208,6 +202,7 @@ h2 {
 
 .topnav-centered a {
   font-size: 40px;
+  font-weight: bold;
   float: none;
   position: absolute;
   top: 50%;
@@ -235,16 +230,28 @@ h2 {
   }
 }
 
-.titlerechtstekst {
-  float: right;
-  width: 50%;
-  padding: 10px;
-  height: 100dvh;
+p {
+  font-weight: lighter;
+  font-size: 20px;
+  line-height: 110%;
 }
 
-.titlelinkstekst {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  height: 100dvh;
+.row {
+  display: flex;
 }
+
+.column {
+  flex: 50%;
+  padding: 100px;
+  padding-right: 300px;
+}
+
+/* .scroller {
+  height: 100dvh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.scroller section {
+  scroll-snap-align: start;
+} */

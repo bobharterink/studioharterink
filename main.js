@@ -63,7 +63,7 @@ else {
 }
 }); */
 
-$(window).scroll(function () {
+/* $(window).scroll(function () {
   var a = 1000;
   var pos = $(window).scrollTop();
   if (pos > a) {
@@ -76,19 +76,27 @@ $(window).scroll(function () {
     });
   }
 });
-
-$(window).scroll(function () {
-  $(".icon-scroll").css("opacity", 1 - $(window).scrollTop() / 10);
+ */
+$(document).ready(function () {
+  $(window).scroll(function () {
+    $(".icon-scroll").css("opacity", 1 - $(window).scrollTop() / 10);
+  });
 });
 
-$(window).scroll(function () {
-  $("#brandname").css("opacity", 1 - $(window).scrollTop() / 100);
+$(document).ready(function () {
+  $(window).scroll(function () {
+    $("#brandname").css("opacity", 1 - $(window).scrollTop() / 100);
+  });
 });
 
-$(window).scroll(function () {
-  $(".topnav").css("opacity", 0 + $(window).scrollTop() / 100);
+$(document).ready(function () {
+  $(window).scroll(function () {
+    $(".topnav").css("opacity", 0 + $(window).scrollTop() / 100);
+  });
 });
 
-$(window).scroll(function () {
-  $("#brandname").css("font-size", 100 - $(window).scrollTop() / 10);
-});
+$(document).ready(function () {
+  $(window).scroll(function () {
+    $("#brandname").css("font-size", 100 - $(window).scrollTop() / 10);
+  });
+  });
