@@ -95,8 +95,22 @@ $(document).ready(function () {
   });
 });
 
-$(document).ready(function () {
-  $(window).scroll(function () {
-    $("#brandname").css("font-size", 100 - $(window).scrollTop() / 10);
-  });
-  });
+
+
+  function myFunction(x) {
+    if (x.matches) { // If media query matches
+      $(document).ready(function () {
+        $(window).scroll(function () {
+          $("#brandname").css("font-size", 70 - $(window).scrollTop() / 10);
+        });
+        });    } else {
+      $(document).ready(function () {
+        $(window).scroll(function () {
+          $("#brandname").css("font-size", 100 - $(window).scrollTop() / 10);
+        });
+        });    }
+  }
+  
+  var x = window.matchMedia("(max-width: 700px)")
+  myFunction(x) // Call listener function at run time
+  x.addListener(myFunction) // Attach listener function on state changes
