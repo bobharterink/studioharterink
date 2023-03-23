@@ -14,8 +14,15 @@ const handler = async (event) => {
       currency: "eur",
     });
 
+    // Add cors headers
+    const headers = {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers": "Content-Type",
+    };
+
     return {
       statusCode: 200,
+      headers,
       body: JSON.stringify({
         clientSecret: paymentIntent.client_secret,
         amount: paymentIntent.amount,
