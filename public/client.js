@@ -27,6 +27,7 @@ const paymentRequest = stripe.paymentRequest({
   },
   requestPayerName: true,
   requestPayerEmail: true,
+  requestShipping: true,
 });
 
 const elements = stripe.elements();
