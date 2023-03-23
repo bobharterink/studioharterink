@@ -1,4 +1,4 @@
-const stripe = Stripe("pk_test_HvEeju8Kg8pqDFSjQQyyxGDb", {
+const stripe = Stripe("pk_test_51Mc9oUIhyqHYmyD1FYZBI4sZ9EsdjnutnfnuwuEfZJRfPbGt5c1YWrQn0PG3L2c2b12eCyLUAH25kcWrUO3F6LkX00BOQ01fVD", {
   apiVersion: "2022-11-15",
 });
 
