@@ -8,7 +8,9 @@ const stripe = Stripe(
 let clientSecret;
 
 async function createPaymentIntent() {
-  const res = await fetch("/.netlify/functions/create-payment-intent");
+  const res = await fetch(
+    "https://studioharterink.com/.netlify/functions/create-payment-intent"
+  );
   const data = await res.json();
   clientSecret = data.clientSecret;
   // return data;
