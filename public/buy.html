@@ -13,6 +13,16 @@
     <div id="payment-request-button">
         <!-- A Stripe Element will be inserted here. -->
     </div>
+
+    <div id="payment-succeeded" style="display:none">
+        <h1>Payment succeeded!</h1>
+        <p>Thank you for your purchase.</p>
+    </div>
+    <div id="payment-error" style="display:none">
+        <h1>Payment Error!</h1>
+        <p>Something went wrong. Please try again.</p>
+    </div>
+
     <script src="https://js.stripe.com/v3/"></script>
     <script src="client.js"></script>
 </body>

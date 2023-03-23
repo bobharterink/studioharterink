@@ -70,11 +70,17 @@ paymentRequest.on("paymentmethod", async (ev) => {
       const { error } = await stripe.confirmCardPayment(clientSecret);
       if (error) {
         // The payment failed -- ask your customer for a new payment method.
+        document.getElementById("payment-error").style.display = "block";
       } else {
+        document.getElementById("payment-request-button").style.display =
+          "none";
+        document.getElementById("payment-succeeded").style.display = "block";
         // The payment has succeeded.
       }
     } else {
       // The payment has succeeded.
+      document.getElementById("payment-request-button").style.display = "none";
+      document.getElementById("payment-succeeded").style.display = "block";
     }
   }
 });
