@@ -8,3 +8,10 @@ https://studioharterink.com/.netlify/functions/create-payment-intent
 
 https://stripe.com/docs/stripe-js/elements/payment-request-button
 
+# Ngrok
+
+To test payment we need HTTPS. Start a live server, then run ngrok:
+
+```
+ngrok http 5500
+```
