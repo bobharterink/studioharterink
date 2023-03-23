@@ -1,13 +1,27 @@
-const stripe = Stripe("pk_test_51Mc9oUIhyqHYmyD1FYZBI4sZ9EsdjnutnfnuwuEfZJRfPbGt5c1YWrQn0PG3L2c2b12eCyLUAH25kcWrUO3F6LkX00BOQ01fVD", {
-  apiVersion: "2022-11-15",
-});
+const stripe = Stripe(
+  "pk_test_51Mc9oUIhyqHYmyD1FYZBI4sZ9EsdjnutnfnuwuEfZJRfPbGt5c1YWrQn0PG3L2c2b12eCyLUAH25kcWrUO3F6LkX00BOQ01fVD",
+  {
+    apiVersion: "2022-11-15",
+  }
+);
+
+let clientSecret;
+
+async function createPaymentIntent() {
+  const res = await fetch("/.netlify/functions/create-payment-intent");
+  const data = await res.json();
+  clientSecret = data.clientSecret;
+  // return data;
+}
+
+createPaymentIntent();
 
 const paymentRequest = stripe.paymentRequest({
   country: "BE",
   currency: "eur",
   total: {
     label: "Vase",
-    amount: 30,
+    amount: 3000,
   },
   requestPayerName: true,
   requestPayerEmail: true,
