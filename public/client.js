@@ -28,6 +28,14 @@ const paymentRequest = stripe.paymentRequest({
   requestPayerName: true,
   requestPayerEmail: true,
   requestShipping: true,
+  shippingOptions: [
+    {
+      id: "free",
+      label: "Free shipping",
+      detail: "Free shipping",
+      amount: 0,
+    },
+  ],
 });
 
 const elements = stripe.elements();
