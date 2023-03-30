@@ -12,6 +12,7 @@ const handler = async (event) => {
     const paymentIntent = await stripe.paymentIntents.create({
       amount: 3000,
       currency: "eur",
+      automatic_payment_methods: {enabled: true},
     });
 
     // Add cors headers
