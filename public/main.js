@@ -11,7 +11,7 @@ const preloadImages = () => {
   const images = [];
 
   for (let i = 1; i <= frameCount; i++) {
-    const src = `/public/videoimg/${i.toString().padStart(4, "0")}.jpg`;
+    const src = `/videoimg/${i.toString().padStart(4, "0")}.jpg`;
     const img = new Image();
     img.src = src;
     images.push(img);
