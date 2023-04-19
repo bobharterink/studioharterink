@@ -13,8 +13,13 @@
 </head>
 
 <body>
+	<div class="hamburger" onclick="toggleMenu()">
+		<div class="line"></div>
+		<div class="line"></div>
+		<div class="line"></div>
+	</div>
 
-    <div class="topnav" style="opacity: 0;">
+    <div class="topnav" style="">
         <!-- Centered link -->
         <div class="topnav-centered">
             <a href="#hero-wrapper" class="active">Harterink</a>
@@ -24,17 +29,21 @@
             <a href="#beeld">Uniek</a>
             <a href="#hoegemaakt">Gemaakt</a>
         </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#hero-wrapper" class="active">Harterink</a>
+            <a href="#beeld">Uniek</a>
+            <a href="#hoegemaakt">Gemaakt</a>
+        </div>
     </div>
+
 
     <header class="header section">
         <div class="center">
-            <h1 id="brandname" style="opacity: 1; font-size: 100px;">Harterink</h1>
+            <h1 id="brandname" style="">Harterink</h1>
             <div id="scrollic" class="icon-scroll" style="opacity: 1;"></div>
         </div>
     </header>
-<div id="payment-request-button">
-  <!-- A Stripe Element will be inserted here. -->
-</div>
 
     <div id="hero-wrapper">
         <div id="hero-content"></div>

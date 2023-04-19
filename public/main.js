@@ -11,7 +11,7 @@ const preloadImages = () => {
   const images = [];
 
   for (let i = 1; i <= frameCount; i++) {
-    const src = `/videoimg/${i.toString().padStart(4, "0")}.jpg`;
+    const src = `/public/videoimg/${i.toString().padStart(4, "0")}.jpg`;
     const img = new Image();
     img.src = src;
     images.push(img);
@@ -79,29 +79,52 @@ else {
  */
 $(document).ready(function () {
   $(window).scroll(function () {
-    $(".icon-scroll").css("opacity", 1 - $(window).scrollTop() / 10);
+    var opacity = 1 - $(window).scrollTop() / 10;
+    if (opacity < 0) {
+      opacity = 0;
+    }
+    $(".icon-scroll").css("opacity", opacity);
   });
 });
 
 $(document).ready(function () {
   $(window).scroll(function () {
-    $("#brandname").css("opacity", 1 - $(window).scrollTop() / 100);
+    var opacity = 1 - $(window).scrollTop() / 100;
+    if (opacity < 0) {
+      opacity = 0;
+    }
+    $("#brandname").css("opacity", opacity);
   });
 });
 
 $(document).ready(function () {
   $(window).scroll(function () {
-    $(".topnav").css("opacity", 0 + $(window).scrollTop() / 100);
+    var fontSize = 100 - $(window).scrollTop() / 10;
+    if (fontSize < 90) {
+      fontSize = 90;
+    }
+    $("#brandname").css("font-size", fontSize);
+  });
+});
+
+$(document).ready(function () {
+  $(window).scroll(function () {
+    var opacity = $(window).scrollTop() / 100;
+    if (opacity > 1) {
+      opacity = 1;
+    }
+    $(".topnav").css("opacity", opacity);
   });
 });
 
 
 
-  function myFunction(x) {
+
+  /* function myFunction(x) {
     if (x.matches) { // If media query matches
       $(document).ready(function () {
         $(window).scroll(function () {
-          $("#brandname").css("font-size", 70 - $(window).scrollTop() / 10);
+          $("#brandname").css("font-size", 100 - $(window).scrollTop() / 10);
         });
         });    } else {
       $(document).ready(function () {
@@ -114,3 +137,16 @@ $(document).ready(function () {
   var x = window.matchMedia("(max-width: 700px)")
   myFunction(x) // Call listener function at run time
   x.addListener(myFunction) // Attach listener function on state changes
+ */
+
+  function toggleMenu() {
+    var menu = document.getElementById("mobileMenu");
+    var hamburgerLines = document.querySelectorAll(".line");
+
+    menu.classList.toggle("active");
+
+    // Draai de hamburgerlijnen om wanneer het menu actief is
+    for (var i = 0; i < hamburgerLines.length; i++) {
+      hamburgerLines[i].classList.toggle("active");
+    }
+  }
